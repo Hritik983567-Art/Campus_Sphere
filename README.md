@@ -133,6 +133,22 @@ flowchart LR
 
 ---
 
+## 📚 Engineering & Product Documentation Index
+
+| Doc ID | File | Description & Mermaid Content |
+| :--- | :--- | :--- |
+| **01** | [`01_PRD.md`](./01_PRD.md) | **Product Requirements Document**: Vision, personas, MoSCoW prioritization, user journeys & Mermaid mindmap. |
+| **02** | [`02_SRS.md`](./02_SRS.md) | **Software Requirements Specification**: Functional (FR-1 to FR-5) & Non-Functional requirements, IEEE 830 compliance, state transition diagram. |
+| **03** | [`03_USER_STORIES.md`](./03_USER_STORIES.md) | **User Stories & BDD**: Agile user story mapping, Gherkin acceptance criteria (`Given/When/Then`). |
+| **04** | [`04_SYSTEM_ARCHITECTURE.md`](./04_SYSTEM_ARCHITECTURE.md) | **System Architecture**: C4 context model, React component hierarchy tree, and GIS/SVG coordinate pipeline. |
+| **05** | [`05_DATABASE_DESIGN.md`](./05_DATABASE_DESIGN.md) | **Database Design & ERD**: PostgreSQL relational schemas, Redis in-memory TTL topology, Mermaid entity-relationship diagram. |
+| **06** | [`06_API_SPECIFICATION.md`](./06_API_SPECIFICATION.md) | **API Specification**: RESTful endpoints, payloads, WebSocket stream contracts, and sequence diagrams. |
+| **07** | [`07_UI_UX_SPECIFICATION.md`](./07_UI_UX_SPECIFICATION.md) | **UI/UX Specification**: Dusky Creamy Alabaster design system tokens, state machine, and 3-column cockpit wireframe. |
+| **08** | [`08_SECURITY.md`](./08_SECURITY.md) | **Security Architecture**: STRIDE threat model, cryptographic HMAC-SHA256 QR passes, RBAC class diagram. |
+| **09** | [`09_TESTING_STRATEGY.md`](./09_TESTING_STRATEGY.md) | **Quality Assurance**: Testing pyramid, CI/CD pipeline, concurrency stress benchmark, live hackathon smoke checklist. |
+
+---
+
 ## 🛠️ Technology Stack
 - **Frontend**: React 19, Vite 8
 - **Styling**: Vanilla CSS with strict HSL tokens & Dusky Creamy Alabaster palette
