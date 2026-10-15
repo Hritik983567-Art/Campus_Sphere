@@ -1,0 +1,108 @@
+/* CampusSphere // Core Design Tokens (Dusky Creamy Palette) */
+:root {
+  /* Canvas & Backgrounds */
+  --bg-canvas: #F5F1EA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FAF8F5;
+  --bg-inset: #ECE6DC;
+  --bg-inset-light: #F4EFE6;
+  --bg-hover: #E8E1D5;
+
+  /* Borders & Dividers */
+  --border-subtle: #E5DFD5;
+  --border-medium: #D8D0C2;
+  --border-focus: #C26D53;
+
+  /* Primary Accent: Warm Terracotta / Dusky Rust */
+  --accent-terracotta: #C26D53;
+  --accent-terracotta-hover: #B85A3C;
+  --accent-terracotta-light: #F7EDE9;
+  --accent-terracotta-soft: rgba(194, 109, 83, 0.12);
+
+  /* Secondary Accents */
+  --accent-sage: #6F8F72;
+  --accent-sage-light: #EEF4EF;
+  --accent-sage-soft: rgba(111, 143, 114, 0.14);
+
+  --accent-amber: #D4A373;
+  --accent-amber-light: #FAF2E8;
+  --accent-amber-soft: rgba(212, 163, 115, 0.15);
+
+  --accent-slate: #4A6B82;
+  --accent-slate-light: #ECF2F6;
+  --accent-slate-soft: rgba(74, 107, 130, 0.12);
+
+  /* Typography: Rich Charcoal Espresso & Muted Umber/Taupe */
+  --text-primary: #23211E;
+  --text-secondary: #6E685F;
+  --text-muted: #968F85;
+  --text-terracotta: #C26D53;
+
+  /* Fonts */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Shadows */
+  --shadow-tactile: 0 4px 20px -2px rgba(40, 30, 20, 0.05), 0 1px 3px rgba(40, 30, 20, 0.04);
+  --shadow-card: 0 8px 30px -4px rgba(40, 30, 20, 0.06), 0 2px 6px rgba(40, 30, 20, 0.03);
+  --shadow-modal: 0 20px 50px -10px rgba(40, 30, 20, 0.18), 0 6px 16px rgba(40, 30, 20, 0.06);
+  --shadow-glow-terracotta: 0 0 20px rgba(194, 109, 83, 0.25);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Soft Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D0C2;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-terracotta);
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+  outline: none;
+  color: var(--text-primary);
+}
