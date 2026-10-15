@@ -47,10 +47,97 @@ Built with a strict **Dusky Warm Creamy Alabaster** aesthetic (`#F7F5F0` base, `
 
 ---
 
+## 🏗️ System Architecture & Telemetry Pipeline
+
+```mermaid
+flowchart TD
+    subgraph Campus_Telemetry["1. Hyperlocal Campus IoT & Telemetry Layer"]
+        S1["Overhead Infrared Seat Grids<br/>(Central Library Floors 1-3)"]
+        S2["GPS Shuttle Kalman Telemetry<br/>(Transit Line 02 Khandagiri Ring)"]
+        S3["Smart RO TDS & Flow Sensors<br/>(Block B/C Hydration Hubs)"]
+        S4["Cloud Print Dispatch Buffer<br/>(Xerox Spool Queues)"]
+        S5["Turnstile RFID & QR Readers<br/>(Main Entrance & Turnstiles)"]
+    end
+
+    subgraph Twin_Engine["2. Real-Time Campus Twin Processing Core"]
+        E1["Dijkstra & A* Adaptive Wayfinder Engine"]
+        E2["30-Min Anti-Hoarding Reservation Daemon"]
+        E3["Dynamic Print Load Balancer & Token Hash"]
+        E4["Facility Advisory & Incident Dispatcher"]
+    end
+
+    subgraph Presentation_Cockpit["3. CampusSphere Cockpit Presentation Layer"]
+        UI1["⊞ Overview Cockpit & 2.5D Blueprint"]
+        UI2["🧭 Interactive GIS Leaflet Real Map"]
+        UI3["📚 Smart Library Pod Matrix & Booking"]
+        UI4["📊 Real-Time Resource Analytics"]
+        UI5["🔐 Institutional Dual Authentication"]
+    end
+
+    S1 --> E2
+    S2 --> E1
+    S3 --> E4
+    S4 --> E3
+    S5 --> E2
+
+    E1 --> UI2
+    E2 --> UI3
+    E3 --> UI3
+    E4 --> UI1
+    E4 --> UI2
+    Twin_Engine --> UI4
+```
+
+---
+
+## 🔄 Smart Library 30-Minute Hold & Verification Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Student as Student App
+    participant Hub as Smart Library Hub
+    participant Daemon as Anti-Hoarding Daemon
+    participant Turnstile as Physical Library Turnstile
+
+    Student->>Hub: Click "Available Desk" (e.g., Desk B-04)
+    Hub->>Daemon: Request 30-Minute Temporary Hold
+    Daemon-->>Hub: Lock Seat ID • Issue Signed QR Token
+    Hub-->>Student: Display Digital Library Pass & 30:00 Timer
+
+    alt Student Scans Turnstile Within 30 Minutes
+        Student->>Turnstile: Scan QR Code / Tap RFID at Entrance
+        Turnstile->>Daemon: Verify Signed Token & Seat ID
+        Daemon->>Hub: Confirm Check-In (Status: OCCUPIED)
+        Hub-->>Student: Boarding Pass Confirmed • Session Active
+    else 30-Minute Timer Expires (No Check-In)
+        Daemon->>Daemon: TTL Elapsed • Trigger Auto-Release
+        Daemon->>Hub: Reset Seat State to AVAILABLE
+        Hub-->>Student: Alert: Hold Expired • Seat Released to Public
+    end
+```
+
+---
+
+## 🗺️ Incident-Aware Hyperlocal Navigation Pipeline
+
+```mermaid
+flowchart LR
+    A["ITER Gate 1<br/>(Start Node)"] --> B["A* Graph Search<br/>Walkway Network"]
+    B --> C{"Check Facility<br/>Advisories"}
+    C -->|"Filter Servicing<br/>at Block B RO"| D["Reroute Via Block C<br/>Hydration Corridor"]
+    C -->|"No Obstacles"| E["Central Quad Paved<br/>Direct Walkway"]
+    D --> F["Block B (CSE)<br/>Lab 304 Target"]
+    E --> F
+```
+
+---
+
 ## 🛠️ Technology Stack
 - **Frontend**: React 19, Vite 8
 - **Styling**: Vanilla CSS with strict HSL tokens & Dusky Creamy Alabaster palette
 - **Mapping & GIS**: Leaflet, Carto/ESRI GIS tile providers
+- **Diagrams**: Mermaid.js workflow & architecture diagrams
 - **Icons**: Lucide React
 - **Typography**: Plus Jakarta Sans, JetBrains Mono
 
@@ -86,4 +173,5 @@ npm run preview
 ## 👥 Hackathon Team
 - **Project**: CampusSphere // Unified Student Utilities & Hyperlocal Campus Navigation
 - **Campus**: ITER, Siksha 'O' Anusandhan (SOA) Deemed to be University, Bhubaneswar, Odisha
+
 
